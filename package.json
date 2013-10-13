@@ -5,5 +5,10 @@
 	"description": "Connector for LFX to output data to a LED strand through an SPI device.",
 	"author": "Andrew Munsell <andrew@wizardapps.net>",
 
-	"main": "./src/index.js"
+	"main": "./src/index.js",
+
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/andrewmunsell/lfx-spi-connector"
+	}
 }
