@@ -1,0 +1,9 @@
+{
+	"name": "LFX SPI Connector",
+	"version": "1.0.0",
+
+	"description": "Connector for LFX to output data to a LED strand through an SPI device.",
+	"author": "Andrew Munsell <andrew@wizardapps.net>",
+
+	"main": "./src/index.js"
+}
