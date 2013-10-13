@@ -1,5 +1,5 @@
 {
-	"name": "LFX SPI Connector",
+	"name": "lfx-spi-connector",
 	"version": "1.0.0",
 
 	"description": "Connector for LFX to output data to a LED strand through an SPI device.",
