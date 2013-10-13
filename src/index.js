@@ -1,4 +1,5 @@
-var extend = require("extend");
+var fs 		= require("fs"),
+	extend 	= require("extend");
 
 /**
  * Default options for the SPI connector
@@ -14,6 +15,8 @@ var defaults = {
  */
 function Connector(config) {
 	this.config = extend(true, defaults, config);
+
+	this._fd = fs.openSync(this.config.device, "w");
 }
 
 /**
@@ -21,7 +24,7 @@ function Connector(config) {
  * @param  {Buffer} buffer Buffer of bytes containing data for the LED string
  */
 Connector.prototype.render = function(buffer) {
-
+	fs.writeSync(this._fd, buffer, 0, buffer.length, 0);
 }
 
 module.exports = Connector;
