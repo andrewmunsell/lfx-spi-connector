@@ -11,6 +11,7 @@
 		"type": "git",
 		"url": "http://github.com/andrewmunsell/lfx-spi-connector"
 	},
+	"license": "GNU GPLv3",
 
 	"dependencies": {
 		"extend": "~1.2",
