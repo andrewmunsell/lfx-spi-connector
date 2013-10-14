@@ -1,4 +1,4 @@
-var fs 		= require("fs"),
+var SPI		= require("spi"),
 	extend 	= require("extend");
 
 /**
@@ -16,7 +16,9 @@ var defaults = {
 function Connector(config) {
 	this.config = extend(true, defaults, config);
 
-	this._fd = fs.openSync(this.config.device, "w");
+	this._spi = new SPI.Spi(this.config.device, {
+		"mode": SPI.MODE['MODE_0']
+	}, function(s){ s.open() });
 }
 
 /**
@@ -24,7 +26,9 @@ function Connector(config) {
  * @param  {Buffer} buffer Buffer of bytes containing data for the LED string
  */
 Connector.prototype.render = function(buffer) {
-	fs.writeSync(this._fd, buffer, 0, buffer.length, 0);
+	var rxBuffer = new Buffer(buffer.length);
+
+	this._spi.transfer(buffer, rxBuffer);
 }
 
 module.exports = Connector;

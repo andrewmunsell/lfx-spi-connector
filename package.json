@@ -13,6 +13,7 @@
 	},
 
 	"dependencies": {
-		"extend": "~1.2"
+		"extend": "~1.2",
+		"spi": "~0.1"
 	}
 }
